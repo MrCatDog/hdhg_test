@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="jokes_margin_horizontal">5dp</dimen>
+    <dimen name="jokes_margin_vertical">10dp</dimen>
+    <dimen name="jokes_amount_width">100dp</dimen>
+    <dimen name="jokes_item_margin">5dp</dimen>
+
+    <dimen name="browser_progress_height">8dp</dimen>
+</resources>
