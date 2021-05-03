@@ -2,6 +2,7 @@ package com.example.jokeschucktest;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,8 @@ import com.example.jokeschucktest.jokesfragment.JokesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+
+    public final static String TITLE_SAVE_TAG = "title";
 
     private final FragmentManager fragmentManager = getSupportFragmentManager();
     private BottomNavigationView bottomNavigationView;
@@ -23,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationListener(this));
         if(savedInstanceState == null) {
+            changeTitle(JokesFragment.TITLE);
             changeFragment(new JokesFragment());
+        } else {
+            changeTitle(savedInstanceState.getString(TITLE_SAVE_TAG));
         }
     }
 
@@ -33,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeFragment(Fragment newFragment) {
         fragmentManager.beginTransaction().replace(R.id.fragment_view, newFragment).commit();
+    }
+
+    public void changeTitle(String title) {
+        setTitle(title);
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(TITLE_SAVE_TAG, getTitle().toString());
     }
 
 }

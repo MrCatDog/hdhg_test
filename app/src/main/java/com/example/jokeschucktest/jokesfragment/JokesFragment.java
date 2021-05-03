@@ -22,6 +22,7 @@ import java.lang.ref.WeakReference;
 
 public class JokesFragment extends Fragment {
 
+    public final static String TITLE = "Jokes";
     public final static String JOKES_SAVE_TAG = "FUNNYASHELL";
 
     private final RecyclerAdapter RA = new RecyclerAdapter();

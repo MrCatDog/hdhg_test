@@ -26,9 +26,11 @@ public class BottomNavigationListener implements BottomNavigationView.OnNavigati
             switch (nextItem) {
                 case R.id.page_1:
                     fragment = new JokesFragment();
+                    mainActivity.changeTitle(JokesFragment.TITLE);
                     break;
                 case R.id.page_2:
                     fragment = new BrowserFragment();
+                    mainActivity.changeTitle(BrowserFragment.TITLE);
                     break;
             }
             mainActivity.changeFragment(fragment);
