@@ -47,7 +47,7 @@ public class JokesFragment extends Fragment {
         jokesList.setLayoutManager(LLM);
         jokesList.setAdapter(RA);
 
-        if(savedInstanceState != null) {
+        if (savedInstanceState != null) {
             RA.restoreDataArray(savedInstanceState.getString(JOKES_SAVE_TAG));
         }
 

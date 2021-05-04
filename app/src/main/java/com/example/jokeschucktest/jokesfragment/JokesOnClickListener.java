@@ -78,7 +78,7 @@ public class JokesOnClickListener implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         String text = jokesFragment.getJokeAmountText();
-        if(text.isEmpty()) {
+        if (text.isEmpty()) {
             return;
         }
         if (isWorking) {

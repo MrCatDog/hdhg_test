@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationListener(this));
-        if(savedInstanceState == null) {
+        if (savedInstanceState == null) {
             changeTitle(JokesFragment.TITLE);
             changeFragment(new JokesFragment());
         } else {

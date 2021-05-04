@@ -34,7 +34,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
 
     @Override
     public void onBindViewHolder(@NonNull VH holder, int position) {
-            holder.jokeText.setText(dataArray[position]);
+        holder.jokeText.setText(dataArray[position]);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
 
     public String getDataArrayForSave() {
         StringBuilder sb = new StringBuilder();
-        for(String i:dataArray) {
+        for (String i : dataArray) {
             sb.append(i).append(SAVE_DELIMITER);
         }
         return sb.toString();
