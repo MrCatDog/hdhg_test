@@ -1,8 +1,15 @@
 <resources>
     <string name="app_name">JokesChuckTest</string>
+
+    <string name="browser_title">Api info</string>
     <string name="browser_menu_item">Browser</string>
+
+    <string name="jokes_title">Jokes</string>
     <string name="joke_menu_item">Jokes</string>
     <string name="jokes_amount_hint">Count</string>
     <string name="jokes_btn_text">RELOAD</string>
+
     <string name="more_about_error_text">More…</string>
+
+    <string name="wrong_number_text">Столько у нас нет, попробуйте другое число!</string>
 </resources>

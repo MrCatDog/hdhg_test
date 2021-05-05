@@ -38,10 +38,11 @@ public class ErrorFragment extends Fragment {
 
         Button moreBut = errContainer.findViewById(R.id.more_about_error_but);
         moreBut.setOnClickListener((View v) -> {
-            if (extendInfo.getVisibility() == View.GONE)
+            if (extendInfo.getVisibility() == View.GONE) {
                 extendInfo.setVisibility(View.VISIBLE);
-            else
+            } else {
                 extendInfo.setVisibility(View.GONE);
+            }
         });
 
         return errContainer;

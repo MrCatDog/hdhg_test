@@ -46,15 +46,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
         this.dataArray = dataArray;
     }
 
-    public void restoreDataArray(String saved) {
-        this.dataArray = saved.split(SAVE_DELIMITER);
-    }
-
-    public String getDataArrayForSave() {
-        StringBuilder sb = new StringBuilder();
-        for (String i : dataArray) {
-            sb.append(i).append(SAVE_DELIMITER);
-        }
-        return sb.toString();
+    public String[] getDataArray() {
+        return this.dataArray;
     }
 }

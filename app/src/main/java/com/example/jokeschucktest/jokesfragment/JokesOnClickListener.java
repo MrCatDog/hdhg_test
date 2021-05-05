@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.jokeschucktest.R;
 import com.example.jokeschucktest.error.ErrorFragment;
 import com.example.jokeschucktest.MainActivity;
 
@@ -13,7 +14,7 @@ public class JokesOnClickListener implements View.OnClickListener {
 
     private static class AsyncTaskRunner extends AsyncTask<Void, String, String[]> {
 
-        public final static String WRONG_NUM_MSG = "Столько у нас нет, попробуйте другое число!";
+        public final static int WRONG_NUM_MSG = R.string.wrong_number_text;
 
         private static final SimpleDataReceiver dataReceiver = new SimpleDataReceiver();
         int amount;

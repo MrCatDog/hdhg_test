@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class BrowserFragment extends Fragment {
 
-    public final static String TITLE = "Api Info";
+    public final static int TITLE = R.string.browser_title;
     public final static String DEFAULT_URL = "http://www.icndb.com/api/";
     public final static boolean OVERVIEW_MODE = true;
     public final static boolean WIDE_PORT = true;
@@ -39,6 +39,8 @@ public class BrowserFragment extends Fragment {
 
         content = layout.findViewById(R.id.browser);
         progressBar = layout.findViewById(R.id.progress_bar);
+
+        getActivity().setTitle(TITLE);
 
         content.setWebViewClient(new WebViewClient() {
             @Override

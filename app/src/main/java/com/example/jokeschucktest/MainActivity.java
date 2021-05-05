@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
     public final static String TITLE_SAVE_TAG = "title";
 
-    private final FragmentManager fragmentManager = getSupportFragmentManager();
     private BottomNavigationView bottomNavigationView;
 
     @Override
@@ -26,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationListener(this));
         if (savedInstanceState == null) {
-            changeTitle(JokesFragment.TITLE);
+            setTitle(JokesFragment.TITLE);
             changeFragment(new JokesFragment());
         } else {
-            changeTitle(savedInstanceState.getString(TITLE_SAVE_TAG));
+            setTitle(savedInstanceState.getString(TITLE_SAVE_TAG));
         }
     }
 
@@ -38,11 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeFragment(Fragment newFragment) {
-        fragmentManager.beginTransaction().replace(R.id.fragment_view, newFragment).commit();
-    }
-
-    public void changeTitle(String title) {
-        setTitle(title);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_view, newFragment).commit();
     }
 
     @Override

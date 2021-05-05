@@ -12,7 +12,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class BottomNavigationListener implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private final MainActivity mainActivity;
-    private Fragment fragment;
 
     BottomNavigationListener(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
@@ -22,16 +21,19 @@ public class BottomNavigationListener implements BottomNavigationView.OnNavigati
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         final int previousItem = mainActivity.getSelectedMenuItem();
         final int nextItem = item.getItemId();
+        Fragment fragment;
         if (previousItem != nextItem) {
             switch (nextItem) {
                 case R.id.page_1:
                     fragment = new JokesFragment();
-                    mainActivity.changeTitle(JokesFragment.TITLE);
+                    mainActivity.setTitle(JokesFragment.TITLE);
                     break;
                 case R.id.page_2:
                     fragment = new BrowserFragment();
-                    mainActivity.changeTitle(BrowserFragment.TITLE);
+                    mainActivity.setTitle(BrowserFragment.TITLE);
                     break;
+                default:
+                    return false;
             }
             mainActivity.changeFragment(fragment);
         }
